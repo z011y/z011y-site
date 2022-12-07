@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-7xl font-black tracking-tighter;
+  }
+  p {
+    @apply text-gray-500;
+  }
+  a {
+    @apply font-mono text-xs uppercase tracking-widest;
+  }
+  li {
+    @apply my-2 leading-6;
+  }
+}
+
+body {
+  background-size: 32px 32px;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 122, 255, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(0, 122, 255, 0.1) 1px, transparent 1px);
+}

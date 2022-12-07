@@ -1,17 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 
 const plugin = require("tailwindcss/plugin");
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
   theme: {
     fontFamily: {
-      sans: ["Inter", "-apple-system", "Segoe UI", "sans-serif"],
-      mono: ["JetBrains Mono", "monospace"],
+      sans: ["Inter", ...fontFamily.sans],
+      mono: ["JetBrains Mono", ...fontFamily.mono],
     },
     colors: {
       transparent: "transparent",

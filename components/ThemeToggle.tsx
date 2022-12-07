@@ -1,10 +1,13 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { atom, useAtom } from "jotai";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 
 type Theme = "dark" | "light";
 
+export const themeAtom = atom<Theme | null>(null);
+
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(null);
+  const [theme, setTheme] = useAtom(themeAtom);
 
   useEffect(() => {
     if (theme === "dark") {
@@ -23,7 +26,7 @@ export default function ThemeToggle() {
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className="w-4"
     >
-      {theme === "dark" ? <MoonIcon /> : <SunIcon />}
+      {theme === "dark" ? <SunIcon /> : <MoonIcon />}
     </div>
   );
 }
